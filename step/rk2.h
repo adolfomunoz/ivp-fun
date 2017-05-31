@@ -21,3 +21,5 @@ auto rk2  = fun::function<3>([] (const auto& step, const auto& f, const auto& ty
 
 }
 }
+
+#endif

@@ -14,7 +14,8 @@ namespace step {
 auto euler  = fun::function<3>([] (const auto& step, const auto& f, const auto& ty)
 {	return std::make_tuple(fun::fst(ty)+step,fun::snd(ty)+step*f(fun::fst(ty),fun::snd(ty)));	});
 
-}
 
 }
 }
+
+#endif

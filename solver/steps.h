@@ -16,8 +16,8 @@ namespace solver {
  * ini  -> initial step, tuple<real, ytype> where ytype is whatever y(t) returns
  * returns -> list of tuple<real, ytype> with all the steps
  **/
-auto steps = fun::function<1>([] (const auto& stepper)
-{	 return fun::iterate(stepper);		}
+auto steps = fun::function<2>([] (const auto& stepper, const auto& f)
+{	 return fun::iterate(stepper(f));		});
 
 }
 }
