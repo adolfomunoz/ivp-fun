@@ -9,10 +9,7 @@ int main(int argc, char** argv)
 	double final_t = 1.0;
 	//auto f = flip * constant
 	
-	std::cout<<"euler -> "<<fun::map(fun::snd, fun::takeWhile((_<final_t)*fun::fst, 
-			ivp::solver::steps(ivp::step::euler(0.1), f,std::make_tuple(0.0,1.0))))<<std::endl;
-	std::cout<<"rk2   -> "<<fun::map(fun::snd, fun::takeWhile((_<final_t)*fun::fst,
-			ivp::solver::steps(ivp::step::rk2(0.1),   f,std::make_tuple(0.0,1.0))))<<std::endl;
-	std::cout<<"rk4   -> "<<fun::map(fun::snd, fun::takeWhile((_<final_t)*fun::fst,
-			ivp::solver::steps(ivp::step::rk4(0.1),   f,std::make_tuple(0.0,1.0))))<<std::endl;
+	std::cout<<"euler -> "<<ivp::solver::solve(ivp::step::euler(0.1),f,0.0,1.0,final_t)<<std::endl;
+	std::cout<<"rk2   -> "<<ivp::solver::solve(ivp::step::rk2(0.1),f,0.0,1.0,final_t)<<std::endl;
+	std::cout<<"rk4   -> "<<ivp::solver::solve(ivp::step::rk4(0.1),f,0.0,1.0,final_t)<<std::endl;
 }
