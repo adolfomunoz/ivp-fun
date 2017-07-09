@@ -1,3 +1,4 @@
 [submodule "fun"]
 	path = fun
 	url = https://github.com/adolfomunoz/fun.git
+	branch = master
